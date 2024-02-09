@@ -1,0 +1,30 @@
+[
+{
+    "img": "https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "title": "Women with Hat",
+    "isFresh": true,
+    "oldPrice":19,
+    "price":12
+},
+{
+    "img":"https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "title": "Hat",
+    "isFresh": true,
+    "oldPrice": 20,
+    "price": 15
+},
+{
+    "img":"https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "title": "mens hat",
+    "isFresh": false,
+    "oldPrice": 18,
+    "price": 15
+},
+{
+    "img":"https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "title": "Men",
+    "isFresh": false,
+    "oldPrice": 20,
+    "price": 15
+}
+]
