@@ -41,16 +41,17 @@ const [data,setData] = useState();
 
 useEffect(() => {
   const fetchdata = async () => {
-    const res = await axios.get('http://localhost:3000/api/products');
+    const res = await axios.get(`${import.meta.env.API}/products`);
     setData(res.data)
   };
   fetchdata()
 },[type])
 
   return (
-    <div className='FeaturedProducts'> <div className="top">
-    <h1>{type} products</h1>
-    <p>
+    <div className='FeaturedProducts'>
+       <div className="top">
+        <h1>{type} products</h1>
+        <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
       suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan

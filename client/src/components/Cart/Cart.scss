@@ -25,7 +25,11 @@
         height: 100px;
         object-fit: cover;
       }
-  
+      .delete {
+        color: red;
+        font-size: 30px;
+        cursor: pointer;
+      }
       .details {
         h1 {
           font-size: 18px;
@@ -41,12 +45,6 @@
         .price {
           color: #2879fe;
         }
-      }
-  
-      .delete {
-        color: red;
-        font-size: 30px;
-        cursor: pointer;
       }
     }
   
