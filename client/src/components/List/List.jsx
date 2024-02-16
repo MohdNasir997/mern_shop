@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './List.scss'
 import Card from '../Card/Card'
+import axios from 'axios';
 const List = ({catId,maxprice,sort}) => {
     // const data = [{
     //     id: 1,
@@ -34,19 +35,23 @@ const List = ({catId,maxprice,sort}) => {
     //     oldPrice: 20,
     //     price: 15,
     // }]
-const [data,setData] = useState();
+const [data,setData] = useState([]);
 const [loading,setLoading] = useState(true)
-
+const API = import.meta.env.VITE_API
 useEffect(() => {
   const fetchdata = async () => {
-    const res = await axios.get(`${import.meta.env.API}/products`);
+    const res = await axios.get(`${API}/products`);
     setData(res.data)
     setLoading(false)
   };
   fetchdata()
-},[type])
+},[maxprice])
+
+
    return (
-    <div className='list'>{loading ? 'Loading' : data?.map((item) => <Card item={item} key={item.id} />)}</div>
+    <div className='list'>{loading ? 'Loading' : data?.map((item) => { if(item.price < maxprice) {
+      return <Card item={item} key={item.id} />
+    } })}</div>
   )
 }
 
