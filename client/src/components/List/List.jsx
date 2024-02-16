@@ -40,12 +40,22 @@ const [loading,setLoading] = useState(true)
 const API = import.meta.env.VITE_API
 useEffect(() => {
   const fetchdata = async () => {
+   if(sort === 'asc'){
+    const res = await axios.get(`${API}/products?sort=${sort}`);
+    setData(res.data)
+    setLoading(false)
+   } else if(sort === 'desc') {
+    const res = await axios.get(`${API}/products?sort=${sort}`);
+    setData(res.data)
+    setLoading(false)
+   }else {
     const res = await axios.get(`${API}/products`);
     setData(res.data)
     setLoading(false)
+   }
   };
   fetchdata()
-},[maxprice])
+},[maxprice,sort])
 
 
    return (

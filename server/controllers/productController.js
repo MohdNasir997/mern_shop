@@ -4,12 +4,20 @@ import Products from '../models/Products.js'
 // Get Products
 
 export const GetProducts = async (req,res) => {
-    
+    const sort = req.query.sort
     try {
-        const products = await Products.find()
-        res.status(200).json(products)
+        if(sort === 'asc'){
+            const products = await Products.find().sort({price: 1})
+            res.status(200).json(products)
+        }else if(sort === 'desc'){
+            const products = await Products.find().sort({price: -1})
+           res.status(200).json(products)
+        }else {
+            const products = await Products.find()
+            res.status(200).json(products)
+        }
     } catch (error) {
-        res.status(404).json('something went wrong')
+        res.status(404).json('something went wrong' + sort)
     }
 }
 
