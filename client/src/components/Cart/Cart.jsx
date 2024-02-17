@@ -5,24 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, resetCart } from '../../Redux/cartReducer';
 
 const Cart = () => {
-    const data = [{
-        id: 1,
-        img: "https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: 'Women with Hat',
-        isNew: true,
-        oldPrice:19,
-        price:12,
-        desc: 'Women posing'
-    },
-    {
-        id:2,
-        img:"https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: 'Hat',
-        isNew: true,
-        oldPrice: 20,
-        price: 15,
-        desc:'models posing'
-    },]
+   
     const products = useSelector((state) => state.cart.products);
     const dispatch = useDispatch();
     const totalPrice = () => {
