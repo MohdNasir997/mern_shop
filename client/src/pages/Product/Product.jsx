@@ -5,6 +5,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BalanceIcon from "@mui/icons-material/Balance";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import {useDispatch} from 'react-redux'
+import {addToCart} from '../../Redux/cartReducer'
 
 function Product() {
   const [selectedImg,setSelectedImg] = useState(0)
@@ -12,6 +14,7 @@ function Product() {
   const [data,setData] = useState([]);
   const [loading,setLoading] = useState(true)
   const id = useParams().id;
+  const dispatch = useDispatch();
   
   useEffect(() => {
     const fetchdata = async () => {
@@ -25,7 +28,7 @@ function Product() {
   //   "https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600",
   //   "https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
   // ]
-  const images= [`${data.img}`,`${data.img}`]
+  const images= [`${data.img}`,`${data.img2}`]
   return (
     <div className='product'>
       <div className="left">
@@ -46,8 +49,15 @@ function Product() {
           {quantity}
           <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
         </div>
-        <button className="add">
-          <AddShoppingCartIcon/> ADD TO CART
+        <button className="add" >
+          <AddShoppingCartIcon onClick={dispatch(addToCart({
+          id: data._id,
+          title: data.title,
+          price: data.price,
+          desc: data.desc,
+          img: data.img,
+          quantity: quantity,
+        }))}/> ADD TO CART
         </button>
         <div className="link">
           <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>          

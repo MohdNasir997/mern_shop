@@ -21,6 +21,9 @@ const ProductSchema = Schema({
     img:{
         type:String
     },
+    img2:{
+        type:String
+    },
     desc:{
         type:String
     },

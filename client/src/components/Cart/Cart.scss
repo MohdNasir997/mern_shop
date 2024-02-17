@@ -48,16 +48,25 @@
       }
     }
   
+   
     .total {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
       font-weight: 500;
+      gap: 10px;
       font-size: 18px;
       margin-bottom: 20px;
+
+      .reset{
+        color:red;
+        font-size: 12px;
+        cursor: pointer;
+      }
     }
   
     button {
-      width: 250px;
+      width: 200px;
       padding: 10px;
       display: flex;
       align-items: center;
@@ -68,12 +77,8 @@
       background-color: #2879fe;
       color: white;
       font-weight: 500;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
     }
   
-    .reset{
-      color:red;
-      font-size: 12px;
-      cursor: pointer;
-    }
+   
   }

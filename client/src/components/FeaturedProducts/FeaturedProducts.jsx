@@ -41,7 +41,7 @@ const [data,setData] = useState();
 
 useEffect(() => {
   const fetchdata = async () => {
-    const res = await axios.get(`${import.meta.env.API}/products`);
+    const res = await axios.get(`${import.meta.env.VITE_API}/products`);
     setData(res.data)
   };
   fetchdata()
