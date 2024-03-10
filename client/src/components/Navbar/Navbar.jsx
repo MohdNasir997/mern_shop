@@ -7,9 +7,11 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 import './Navbar.scss'
 import Cart from '../Cart/Cart';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
   const [open,setOpen] = useState(false);
+  const {currentUser} = useSelector(state => state.user);
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -52,7 +54,10 @@ function Navbar() {
           </div>
           <div className="icons">
             <SearchIcon/>
+           {currentUser ? <div className="item">{currentUser.name}</div> : 
+            <Link to='/signin'>
             <PersonOutlineIcon/>
+            </Link> }
             <FavoriteBorderIcon/>
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon/>
