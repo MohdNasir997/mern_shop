@@ -1,6 +1,7 @@
 # MyShop Web App
 
 This website is an e-commerce website where users can login , browse collections , use cart etc.
+the App can be use through this [link](https://shop-client-tb7f.onrender.com/)
 
 The technologies used to build this applications are the following:
 
